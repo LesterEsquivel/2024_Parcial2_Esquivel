@@ -50,7 +50,10 @@ void crearArchivos(int cantidad){
         for (int i = 0; i < cantidad; ++i) {
             ofstream file;
             file.open("C:/Users/USUARIO/Documents/par/" + nombreArchivo + to_string(i + 1) + ".txt");
-
+            agregarTexto();
+            for (int j = 0; j < i+1; ++j) {
+                file << "linea de texto" << endl;
+            }
             file.close();
         }
         cout << " Archivos creados con Exito" << endl;
@@ -60,7 +63,10 @@ void crearArchivos(int cantidad){
         for (int i = 0; i < cantidad; ++i) {
             ofstream file;
             file.open("C:/Users/USUARIO/Desktop/impar/" + nombreArchivo + to_string(i + 1) + ".txt");
-
+            agregarTexto();
+            for (int j = 0; j < i+1; ++j) {
+                file << "linea de texto" << endl;
+            }
             file.close();
         }
         cout << " Archivos creados con Exito" << endl;
@@ -68,7 +74,9 @@ void crearArchivos(int cantidad){
     }
 }
 
-
+void agregarTexto(){
+    cout << "Agregando texto..." << endl;
+}
 
 int contarArchivosDeDirectorio(){
     WIN32_FIND_DATA findFileData;
